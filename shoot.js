@@ -50,7 +50,9 @@ AFRAME.registerComponent("bullets", {
       }
     });
   },
-  removeBullet: function (e) {
+ removeBullet: function (e) {
+    var scene = document.querySelector("#scene");
+    
     //bullet element
     var element = e.detail.target.el;
 
@@ -60,12 +62,13 @@ AFRAME.registerComponent("bullets", {
     if (elementHit.id.includes("enemy")) {
       //Add code here
 
+      
+      scene.removeChild(elementHit);
     }
     //remove event listener
     element.removeEventListener("collide", this.removeBullet);
 
-    //remove the bullets from the scene
-    var scene = document.querySelector("#scene");
+    //remove the bullets from the scene   
     scene.removeChild(element);
   },
   shootSound: function () {
