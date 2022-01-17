@@ -10,9 +10,11 @@
   <script src="https://recast-api.donmccurdy.com/aframe-inspector-plugin-recast.js"></script>
   <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
 
+  <!--Local Scripts-->  
   <script src="./shoot.js"></script>
   <script src="./gameObjects.js"></script>
   <script src="./playerMovement.js"></script>
+  <script src="./enemyShoot.js"></script>
 
 </head>
 
@@ -50,7 +52,12 @@
         </a-entity>
         <a-cursor></a-cursor>
         <!--Text-->
-        <a-entity id="level1" position="-6 5.21669 -7.1" text="font: mozillavr; width:5; height: 5; value: Level 1">
+        
+        <a-entity id="ins1" position="-4.62 4.25669 -7.1"
+          text="font: mozillavr; width:5; height: 5; value: Press 'Arrow Keys' to Move the Player">
+        </a-entity>
+        <a-entity id="in2" position="4.62 4.25669 -7.1"
+          text="font: mozillavr; width:5; height: 5; value: Press 'z' to Shoot the Bullets">
         </a-entity>
 
         <a-entity id="tanktargets" position="7 5 -7.1" text="font: mozillavr;width:10; height: 5; value: Shoot Tanks:">
@@ -74,6 +81,7 @@
 
     <!--Bullets-->
     <a-entity bullets></a-entity>
+    <a-entity enemy-bullets></a-entity>
 
     <!--Game Objects-->
     <a-entity wire-fence boxes></a-entity>
