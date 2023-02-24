@@ -47,13 +47,15 @@
     <a-entity id="camera-rig" movement-controls="speed: 0.2; constrainToNavMesh: true" position="0 1 2">
       <!--Camera and Cursor-->
       <a-entity id="camera" camera position="0 1.6 0" look-controls="pointerLockEnabled: false">
-        <a-entity id="weapon" gltf-model="#shooter" position="0 -4.4 3" rotation="0 180 0" scale="0.35 1 1"
+        <a-entity id="weapon" gltf-model="#shooter" 
+          position="0 -4.4 3" rotation="0 180 0" scale="0.35 1 1"
+          body="type: static; mass: 5; shape: none;" 
+          shape="shape: sphere; radius: 5; offset: 0 3 0;"
           player-movement>
         </a-entity>
-        <a-cursor></a-cursor>
+        <a-cursor></a-cursor>   
 
         <!--Text-->
-        
         <a-entity id="ins1" position="-4.62 4.25669 -7.1"
           text="font: mozillavr; width:5; height: 5; value: Press 'Arrow Keys' to Move the Player">
         </a-entity>
@@ -65,7 +67,8 @@
           <a-entity id="countTank" position="3 0 0" text="font: mozillavr; width:10; height: 5; value: 2"></a-entity>
         </a-entity>
 
-        <a-entity id="playerLife" position="-2 5 -7.16344" text="font: mozillavr; width:10; height: 5;value: Player Life:">
+        <a-entity id="playerLife" position="-2 5 -7.16344"
+          text="font: mozillavr; width:10; height: 5;value: Player Life:">
           <a-entity id="countLife" position="3 0 0" text="font: mozillavr; width:10; height: 5; value: 5"></a-entity>
         </a-entity>
 
@@ -97,17 +100,16 @@
     </a-entity>
 
     <!--Enemy-->
-    <a-entity id="enemy1" rotation="0 90 0" gltf-model="#tank" position="-10 0 -15"
+    <a-entity class="enemy" id="enemy1" rotation="0 90 0" gltf-model="#tank" position="-10 0 -15"
       scale="0.015 0.015 0.015" animation-mixer static-body
       animation="property: position; to: 10 0 -15; dur: 20000; easing: linear; loop: true; dir:alternate">
 
     </a-entity>
 
-    <a-entity id="enemy2" rotation="0 90 0" gltf-model="#tank" position="-50 0 -40"
+    <a-entity class="enemy" id="enemy2" rotation="0 90 0" gltf-model="#tank" position="-50 0 -40"
       scale="0.015 0.015 0.015" animation-mixer static-body
       animation="property: position; to: 10 0 -40; dur: 20000; easing: linear; loop: true; dir:alternate">
     </a-entity>
-
 
   </a-scene>
 </body>
